@@ -5,7 +5,7 @@ public class ManageScene : MonoBehaviour
 {
     [SerializeField] private string sceneName;
 
-    public void Play()
+    public void LoadScene()
     {
         Debug.Log("Load Scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
