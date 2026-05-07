@@ -310,6 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Stairs
+  UISoundClip:
+  - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
+  - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
+  - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
 --- !u!114 &1286247886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,6 +566,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452339300}
   m_CullTransparentMesh: 1
+--- !u!1 &1644930842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1644930844}
+  - component: {fileID: 1644930843}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1644930843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644930842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38865a597f80c745bb8cd86f82eb062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXObject: {fileID: 9063544881244013589, guid: 243d6f83fa281d441a85310001fc5c96, type: 3}
+--- !u!4 &1644930844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644930842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 450.7143, y: 325.5052, z: -3.5907624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1899905518
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,3 +710,4 @@ SceneRoots:
   - {fileID: 1899905521}
   - {fileID: 766311305}
   - {fileID: 1334029678}
+  - {fileID: 1644930844}

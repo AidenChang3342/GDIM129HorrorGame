@@ -5,10 +5,14 @@ public class ManageScene : MonoBehaviour
 {
     // Name of scene to load into
     [SerializeField] private string sceneName;
+    [SerializeField] private AudioClip[] UISoundClip;
 
     // Loads the scene based on name set in editor
     public void LoadScene()
     {
+        // plays ui sfx
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+
         Debug.Log("Load Scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
