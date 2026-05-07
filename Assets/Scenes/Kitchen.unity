@@ -1561,6 +1561,7 @@ MonoBehaviour:
   buttonPressedSFX:
   - {fileID: 8300000, guid: 558dbfa8320cad34084bb8a92fb7fc19, type: 3}
   - {fileID: 8300000, guid: f6ad742bb4a980c4d96f1a467fb9a660, type: 3}
+  answer: 7346
 --- !u!1 &1183657403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,7 +3285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008652793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145335965}
+        m_TargetAssemblyTypeName: Keypad, Assembly-CSharp
+        m_MethodName: Check
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2008652793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3405,7 +3418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2011161853}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145335965}
+        m_TargetAssemblyTypeName: Keypad, Assembly-CSharp
+        m_MethodName: Delete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011161853
 MonoBehaviour:
   m_ObjectHideFlags: 0
