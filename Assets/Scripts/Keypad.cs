@@ -3,9 +3,23 @@ using UnityEngine.UI;
 
 public class Keypad : MonoBehaviour
 {
+    // output text
     [SerializeField] private Text output;
+    // keypad sfx
     [SerializeField] private AudioClip[] buttonPressedSFX;
+    // ui sfx
+    [SerializeField] private AudioClip[] UISoundClip;
+    // correct code string
     [SerializeField] private string answer;
+
+    // hides keypad
+    public void Exit()
+    {
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+        this.gameObject.SetActive(false);
+    }
+
+    // inputs keypad number into output text
     public void KeyPressed(int input)
     {
         AudioManager.instance.PlayRandomSFX(buttonPressedSFX, this.transform, 1f);
@@ -17,6 +31,7 @@ public class Keypad : MonoBehaviour
 
     }
 
+    // deletes the whole output string
     public void Delete()
     {
         AudioManager.instance.PlayRandomSFX(buttonPressedSFX, this.transform, 1f);
@@ -24,6 +39,7 @@ public class Keypad : MonoBehaviour
         output.text = "";
     }
 
+    // checks if the current output text equals the answer key
     public void Check()
     {
         AudioManager.instance.PlayRandomSFX(buttonPressedSFX, this.transform, 1f);
