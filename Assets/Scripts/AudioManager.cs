@@ -2,20 +2,29 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // creating singleton to call from anywhere
+
     public static AudioManager instance;
     [SerializeField] private AudioSource SFXObject;
 
+
     private void Awake()
     {
+        // creating singleton to call from anywhere
         if (instance == null)
         {
             instance = this;
+            // keep sounds playing between scenes
+            DontDestroyOnLoad(instance);
         }
-        // keep sounds playing between scenes
-        DontDestroyOnLoad(this);
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 
+    // function to play sound effect by instantiating game object with audio source
     public void PlaySFX(AudioClip audioClip, Transform spawnPoint, float volume)
     {
         // instantiate audioclip gameobject
