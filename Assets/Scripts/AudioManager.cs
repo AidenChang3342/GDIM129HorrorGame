@@ -5,6 +5,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     [SerializeField] private AudioSource SFXObject;
+    [SerializeField] private AudioSource ambienceSource;
+    [SerializeField] private AudioClip ambience;
 
 
     private void Awake()
@@ -22,6 +24,11 @@ public class AudioManager : MonoBehaviour
         }
 
 
+    }
+    private void Start()
+    {
+        ambienceSource.clip = ambience;
+        ambienceSource.Play();
     }
 
     // function to play sound effect by instantiating game object with audio source
