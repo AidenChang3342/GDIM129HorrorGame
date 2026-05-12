@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Keypad : MonoBehaviour
 {
     // output text
-    [SerializeField] private Text output;
+    [SerializeField] private TMP_Text output;
     // keypad sfx
     [SerializeField] private AudioClip[] buttonPressedSFX;
     // ui sfx
