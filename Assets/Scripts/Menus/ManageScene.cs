@@ -7,6 +7,13 @@ public class ManageScene : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private AudioClip[] UISoundClip;
 
+    private void OnMouseDown()
+    {
+        Debug.Log("Clicked: " + gameObject.name);
+        LoadScene();
+    }
+
+
     // Loads the scene based on name set in editor
     public void LoadScene()
     {
