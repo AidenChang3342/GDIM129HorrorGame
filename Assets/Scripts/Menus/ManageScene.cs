@@ -31,14 +31,11 @@ public class ManageScene : MonoBehaviour
 
         /* if in-editor, stops playing
            if in real build, exits application */
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.ExitPlaymode();
-        }
-        else
-        {
-            Application.Quit();      
-        }
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
       
     }
 }
