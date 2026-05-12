@@ -16,4 +16,10 @@ public class Fridge : MonoBehaviour
             keypad.SetActive(true);
         }
     }
+    private void OnMouseDown()
+    {
+        Debug.Log("Clicked Keypad ");
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+        keypad.SetActive(true);
+    }
 }
