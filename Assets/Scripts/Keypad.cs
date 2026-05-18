@@ -15,7 +15,7 @@ public class Keypad : MonoBehaviour
     // hides keypad
     public void Exit()
     {
-        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
         this.gameObject.SetActive(false);
     }
 

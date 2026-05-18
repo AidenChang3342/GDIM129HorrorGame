@@ -44,7 +44,7 @@ public class KitchenClue : MonoBehaviour
             // if ray hits the breath mark collider, give clue
             if(hit.collider != null && hit.collider.gameObject == breathMark)
             {
-                AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+                AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
                 Debug.Log("add: give closer look of clue");
             }
         }        
