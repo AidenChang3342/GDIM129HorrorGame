@@ -9,6 +9,7 @@ public class StairsClue : MonoBehaviour
     private void Start()
     {
         // play footsteps sfx after a delay
+        // add later: only play after certain clues are gathered
         StartCoroutine(PlayFootsteps());
     }
 

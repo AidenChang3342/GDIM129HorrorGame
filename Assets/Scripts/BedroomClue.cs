@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HallwayClue : MonoBehaviour
+public class BedroomClue : MonoBehaviour
 {
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private AudioClip[] UISoundClip;
@@ -10,12 +10,13 @@ public class HallwayClue : MonoBehaviour
         closeupObject.SetActive(false);
     }
 
-    // on mouse click, play pickup sfx and show closeup of object
+    // on mouse click, play pickup sfx and show closeup of key
+    // add later: also add clue to inventory and implement unlocking door
     private void OnMouseDown()
     {
         AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);
         closeupObject.SetActive(true);
-        Debug.Log("add later: pick up clue");
+        Debug.Log("add later: put in inventory");
     }
 
     // hides closeup object
