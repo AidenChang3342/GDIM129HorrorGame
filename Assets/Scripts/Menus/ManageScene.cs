@@ -18,7 +18,7 @@ public class ManageScene : MonoBehaviour
     public void LoadScene()
     {
         // plays ui sfx
-        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 1f);
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
 
         Debug.Log("Load Scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
