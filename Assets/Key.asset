@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Key
   itemColor: {r: 1, g: 0.8700229, b: 0, a: 0}
-  itemDescription: It's a key to my door. It seems to have the number 7 written on
-    it.
+  itemDescription:
+  - It's a key to my door I think. It seems to have the number 7 written on it.

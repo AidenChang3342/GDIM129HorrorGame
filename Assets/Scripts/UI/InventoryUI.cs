@@ -23,11 +23,6 @@ public class InventoryUI : MonoBehaviour
         // ensure inventory starts closed
         animator.SetBool("Open", false); 
     }
-    private void Start()
-    {
-        // hide inventory UI on start
-        itemParent.gameObject.SetActive(false);
-    }
 
     public void ToggleInventory()
     {

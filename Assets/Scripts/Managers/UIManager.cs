@@ -18,5 +18,14 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // cache dialogueUI and inventoryUI references to prevent errors
+        dialogueUI = GetComponentInChildren<DialogueUI>();
+        inventoryUI = GetComponentInChildren<InventoryUI>();
+    }
+    private void Start()
+    {
+        // call event to cache dialogueUI reference for dialogue manager
+        GameEvents.OnUIReady?.Invoke();
     }
 }

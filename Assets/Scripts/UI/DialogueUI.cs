@@ -13,15 +13,20 @@ public class DialogueUI : MonoBehaviour
 
     // shows dialogue panel and sets text, called from DialogueManager
     // if time: add text scrolling and clicking to advance lines
-    public void Show(string text)
+    public void Show()
     {
         dialoguePanel.SetActive(true);
-        dialogueText.text = text;
     }
 
     // hides dialogue panel, called from DialogueManager
     public void Hide()
     {
         dialoguePanel.SetActive(false);
+    }
+
+    // sets dialogue text to update text
+    public void SetText(string text)
+    {
+        dialogueText.text = text;
     }
 }

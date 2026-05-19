@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class GameEvents
 {
@@ -10,5 +11,7 @@ public static class GameEvents
     // event for when inventory is closed
     public static Action OnInventoryClosed;
     // event for when inventory item is clicked for inspection
-    public static Action<string> InspectionItemClicked;
+    public static Action<List<string>> InspectionItemClicked;
+    // event for caching dialogueUI for dialogue to prevent errors
+    public static Action OnUIReady;
 }
