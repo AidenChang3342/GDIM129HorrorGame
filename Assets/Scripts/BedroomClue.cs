@@ -5,6 +5,7 @@ public class BedroomClue : MonoBehaviour
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private AudioClip[] UISoundClip;
     [SerializeField] private GameObject closeupObject;
+    [SerializeField] private ItemData clueItem;
     private void Start()
     {
         closeupObject.SetActive(false);
