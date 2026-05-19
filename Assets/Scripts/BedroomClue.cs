@@ -9,7 +9,8 @@ public class BedroomClue : MonoBehaviour
     [SerializeField] private List<string> dialogueLines;
 
     // on mouse click, play pickup sfx and show dialogue, then add clue to inventory
-    // add later: add gamemanager to save picked up clues and implement unlocking door
+    // add later: add gamemanager to save picked up clues (this prevents key from returning when player leaves and comes back) 
+    // implement unlocking door
     private void OnMouseDown()
     {
         AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);

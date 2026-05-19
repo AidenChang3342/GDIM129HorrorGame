@@ -17,6 +17,11 @@ public class ManageScene : MonoBehaviour
     // Loads the scene based on name set in editor
     public void LoadScene()
     {
+        if(DialogueManager.instance.isDialogueActive)
+        {
+            Debug.Log("Cannot change scene while dialogue is active");
+            return;
+        }
         // plays ui sfx
         AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
 
