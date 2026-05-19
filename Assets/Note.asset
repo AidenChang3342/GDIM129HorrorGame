@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2fe8b8011d5228428c334529e574d6e, type: 3}
-  m_Name: Key
+  m_Name: Note
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Key
-  itemColor: {r: 1, g: 0.8700229, b: 0, a: 0}
+  itemName: Note
+  itemColor: {r: 1, g: 0.45336083, b: 0, a: 0}
+  itemDescription: "Breakfast was a disaster: the eggs were cold, the milk spoiled,
+    and the cereal box had three holes in it.  P.S. Hungry? We hear every step\u2026
+    the stairs might know more than you think."

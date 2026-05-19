@@ -21,6 +21,16 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnEnable()
+    {
+        // subscribe to inventory events
+        GameEvents.InspectionItemClicked += ShowDialogue;
+    }
+    private void OnDisable()
+    {
+        // unsubscribe from inventory events
+        GameEvents.InspectionItemClicked -= ShowDialogue;
+    }
 
     // function to display dialogue, called from events when player interacts with objects or picks up items
     public void ShowDialogue(string text)
