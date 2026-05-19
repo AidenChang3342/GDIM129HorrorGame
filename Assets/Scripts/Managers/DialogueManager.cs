@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     // function to display dialogue, called from events when player interacts with objects or picks up items
     public void StartDialogue(List<string> lines)
     {
-        if(lines == null || lines.Count == 0)
+        if (lines == null || lines.Count == 0)
         {
             Debug.Log("no lines found");
             return;
@@ -90,6 +90,10 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            if(InspectionUI.instance.inspection.activeSelf)
+            {
+                InspectionUI.instance.CloseInspection();
+            }
             HideDialogue();
         }
     }
@@ -98,7 +102,6 @@ public class DialogueManager : MonoBehaviour
     public void HideDialogue()
     {
         isDialogueActive = false;
-        dialogueLines.Clear();
         lineIndex = 0;
 
         dialogueUI.Hide();

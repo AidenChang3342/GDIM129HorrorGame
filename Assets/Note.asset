@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Note
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Note
-  itemColor: {r: 1, g: 0.45336083, b: 0, a: 0}
-  itemDescription: "Breakfast was a disaster: the eggs were cold, the milk spoiled,
-    and the cereal box had three holes in it.  P.S. Hungry? We hear every step\u2026
-    the stairs might know more than you think."
+  itemColor: {r: 1, g: 0.45336083, b: 0, a: 1}
+  itemDescription:
+  - 'Breakfast was a disaster: the eggs were cold, the milk spoiled, and the cereal
+    box had three holes in it. '
+  - P.S. Hungry? We hear every step, the stairs might know more than you think.

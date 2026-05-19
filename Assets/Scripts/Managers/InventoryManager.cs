@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
     // list of items in inventory, can be accessed from anywhere using singleton
     public List<ItemData> items = new List<ItemData>();
 
-
+    // to add: expand inventory and make it take up more screen space when opened
     private void Awake()
     {
         // creating singleton to call from anywhere

@@ -5,7 +5,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform itemParent;
     [SerializeField] private InventorySlot slotPrefab;
     [SerializeField] private Animator animator;
-    private bool isOpen = false;
+    [SerializeField] private AudioClip[] uiSFX;
+    public bool isOpen = false;
     private void OnEnable()
     {
         // subscribe to inventory events
@@ -26,8 +27,13 @@ public class InventoryUI : MonoBehaviour
 
     public void ToggleInventory()
     {
+        // need to add: gamemanager (hunger bar), bool variable to check if can open inventory
+        // this is relevant in the kitchen when the keypad is open
+        // if can't open inventory return;
         isOpen = !isOpen;
         animator.SetBool("Open", isOpen);
+        
+        AudioManager.instance.PlayRandomSFX(uiSFX, this.transform, 0.5f);
 
         // call events for opening and closing inventory
         // can be used later for things like pausing the dialogue when inventory is open, or resuming when closed
