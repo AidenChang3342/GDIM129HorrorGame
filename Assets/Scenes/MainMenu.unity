@@ -669,6 +669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   audioManagerPrefab: {fileID: 7980076431899211135, guid: 977d452de8b8a0b4e8b47dda5ac7b27d, type: 3}
+  inventoryManagerPrefab: {fileID: 7866091027965120644, guid: 17039ceeb74c41b4aa993bd17ab430de, type: 3}
+  dialogueManagerPrefab: {fileID: 5537948805190266027, guid: c093e834f1112994f8e78017c26aaa6b, type: 3}
+  uiManagerPrefab: {fileID: 3748677363648057362, guid: 037e19e18e6815d4486f9e8d84e314d4, type: 3}
 --- !u!4 &1436090674
 Transform:
   m_ObjectHideFlags: 0
