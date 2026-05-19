@@ -32,6 +32,12 @@ public class DialogueManager : MonoBehaviour
         GameEvents.InspectionItemClicked -= ShowDialogue;
     }
 
+    private void Start()
+    {
+        // get reference to dialogue UI from UI manager singleton
+        dialogueUI = UIManager.instance.dialogueUI;
+    }
+
     // function to display dialogue, called from events when player interacts with objects or picks up items
     public void ShowDialogue(string text)
     {

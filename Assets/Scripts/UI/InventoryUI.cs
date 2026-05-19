@@ -16,12 +16,17 @@ public class InventoryUI : MonoBehaviour
         // unsubscribe from inventory events
         GameEvents.OnItemAdded -= UpdateUI;
     }
+    private void Awake()
+    {
+        // start with inventory closed animation
+        animator.Play("InventoryClosed", 0, 1f); 
+        // ensure inventory starts closed
+        animator.SetBool("Open", false); 
+    }
     private void Start()
     {
         // hide inventory UI on start
         itemParent.gameObject.SetActive(false);
-
-        animator.SetBool("Open", false); // ensure inventory starts closed
     }
 
     public void ToggleInventory()
@@ -29,7 +34,8 @@ public class InventoryUI : MonoBehaviour
         isOpen = !isOpen;
         animator.SetBool("Open", isOpen);
 
-        // call events for opening and closing inventory, affects dialogue
+        // call events for opening and closing inventory
+        // can be used later for things like pausing the dialogue when inventory is open, or resuming when closed
         if (isOpen)
         {
             GameEvents.OnInventoryOpened?.Invoke();
