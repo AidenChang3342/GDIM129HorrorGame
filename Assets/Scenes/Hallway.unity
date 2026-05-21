@@ -1784,6 +1784,7 @@ MonoBehaviour:
   clueItem: {fileID: 11400000, guid: 3f120a779a39831429d9ea1a4b32498b, type: 2}
   dialogueLines:
   - "There\u2019s a small piece of paper behind this plant right here."
+  - Let me keep it just in case.
 --- !u!1 &2129005699
 GameObject:
   m_ObjectHideFlags: 0

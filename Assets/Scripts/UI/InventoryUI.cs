@@ -30,6 +30,11 @@ public class InventoryUI : MonoBehaviour
         // need to add: gamemanager (hunger bar), bool variable to check if can open inventory
         // this is relevant in the kitchen when the keypad is open
         // if can't open inventory return;
+        if (DialogueManager.instance.isDialogueActive)
+        {
+            // if dialogue is active, prevent player from opening inventory
+            return;
+        }
         isOpen = !isOpen;
         animator.SetBool("Open", isOpen);
         
