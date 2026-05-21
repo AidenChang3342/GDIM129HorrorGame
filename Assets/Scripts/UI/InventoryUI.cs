@@ -36,7 +36,7 @@ public class InventoryUI : MonoBehaviour
         AudioManager.instance.PlayRandomSFX(uiSFX, this.transform, 0.5f);
 
         // call events for opening and closing inventory
-        // can be used later for things like pausing the dialogue when inventory is open, or resuming when closed
+        // later: add game events inclusion to other objects to pause actions when inventory open
         if (isOpen)
         {
             GameEvents.OnInventoryOpened?.Invoke();

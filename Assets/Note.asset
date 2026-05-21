@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Note
   itemColor: {r: 1, g: 0.45336083, b: 0, a: 1}
   itemDescription:
-  - 'Breakfast was a disaster: the eggs were cold, the milk spoiled, and the cereal
-    box had three holes in it. '
-  - P.S. Hungry? We hear every step, the stairs might know more than you think.
+  - "Wait, there\u2019s some smaller writing here\u2026"
+  - '"Breakfast was a disaster: the eggs were cold, the milk spoiled, and the cereal
+    box had three holes in it. "'
+  - '"P.S. Hungry? We hear every step, the stairs might know more than you think."'

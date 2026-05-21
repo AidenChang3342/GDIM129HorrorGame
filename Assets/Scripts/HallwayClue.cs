@@ -1,27 +1,32 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class HallwayClue : MonoBehaviour
 {
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private AudioClip[] UISoundClip;
-    [SerializeField] private GameObject closeupObject;
-    private void Start()
-    {
-        closeupObject.SetActive(false);
-    }
+    [SerializeField] private ItemData clueItem;
+    [SerializeField] private List<string> dialogueLines;
 
     // on mouse click, play pickup sfx and show closeup of object
     private void OnMouseDown()
     {
-        AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);
-        closeupObject.SetActive(true);
-        Debug.Log("add later: pick up clue");
-    }
+        if (UIManager.instance.inventoryUI.isOpen)
+        {
+            Debug.Log("Cannot interact while inventory is opened");
+            return;
+        }
 
-    // hides closeup object
-    public void ExitCloseup()
-    {
-        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
-        closeupObject.SetActive(false);
+        AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);
+        
+        // show dialogue
+        DialogueManager.instance.StartDialogue(dialogueLines);
+
+        // add clue to inventory
+        InventoryManager.instance.AddItem(clueItem);
+
+        // deactivate object
+        // later: interact with game manager and save data of clue being picked up
+        gameObject.SetActive(false);
     }
 }

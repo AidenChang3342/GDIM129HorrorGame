@@ -13,6 +13,12 @@ public class BedroomClue : MonoBehaviour
     // implement unlocking door
     private void OnMouseDown()
     {
+        if (UIManager.instance.inventoryUI.isOpen)
+        {
+            Debug.Log("Cannot interact while inventory is opened");
+            return;
+        }
+
         AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);
         
         // show dialogue
