@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 4628173487318979561}
   - component: {fileID: 4239926971955203979}
   - component: {fileID: 8667452207179031847}
+  - component: {fileID: 342927988747112841}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -265,6 +266,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &342927988747112841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399211849637640902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e58751ba779cd14ebbd4a72f26f6466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1865814832222858342
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dialogueUI: {fileID: 0}
   inventoryUI: {fileID: 0}
+  inspectionUI: {fileID: 0}
 --- !u!114 &1278948766037048224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +959,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
   - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
   - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
+  isOpen: 0
 --- !u!95 &1867540870167587830
 Animator:
   serializedVersion: 7
