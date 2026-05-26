@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Note
   itemColor: {r: 1, g: 0.45336083, b: 0, a: 1}
+  itemSprite: {fileID: 21300000, guid: a75c92f4429a0a34ab13261b073b4b89, type: 3}
+  inspectionSprite: {fileID: 21300000, guid: a4ce31222ed4dd2408161c397d2d565d, type: 3}
   itemDescription:
   - "Wait, there\u2019s some smaller writing here\u2026"
   - '"Breakfast was a disaster: the eggs were cold, the milk spoiled, and the cereal
