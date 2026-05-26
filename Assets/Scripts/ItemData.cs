@@ -10,5 +10,7 @@ public class ItemData : ScriptableObject
     // to actually implement, this needs to be a sprite
     // could possibly have separate sprites for inventory icon and inspection image
     public Color itemColor;
+    public Sprite itemSprite;
+    public Sprite inspectionSprite;
     public List<string> itemDescription;
 }

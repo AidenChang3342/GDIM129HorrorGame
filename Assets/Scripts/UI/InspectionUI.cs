@@ -17,10 +17,10 @@ public class InspectionUI : MonoBehaviour
     {
         inspection.SetActive(true);
 
-        // this is only temporary, replace color with actual sprite
-        // inspectImage.sprite = item.itemSprite
-        // once this is done, remember to change the itemData to include the sprite
-        inspectImage.color = item.itemColor;
+        inspectImage.sprite = item.inspectionSprite;
+        inspectImage.preserveAspect = true;
+        inspectImage.SetNativeSize(); // important
+
     }
 
     public void CloseInspection()
