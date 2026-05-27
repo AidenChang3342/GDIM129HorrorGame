@@ -18,6 +18,11 @@ public class BedroomClue : MonoBehaviour
     // implement unlocking door
     private void Start()
     {
+        // if clue has already been found, set gameobject to inactive
+        if(GameManager.instance.bedroomClueFound)
+        {
+            this.gameObject.SetActive(false);
+        }
         key.SetActive(false);
     }
     private void OnMouseDown()
@@ -28,7 +33,13 @@ public class BedroomClue : MonoBehaviour
             return;
         }
 
-        StartCoroutine(PickupRoutine());
+        // if clue has not been found, play pickup sfx, show dialogue, add clue to inventory, and set clue as found in game manager so it doesn't respawn
+        if(GameManager.instance.bedroomClueFound == false)
+        {
+            Debug.Log("bedroom clue found");
+            StartCoroutine(PickupRoutine());
+            GameManager.instance.bedroomClueFound = true;
+        }
     }
 
     private IEnumerator PickupRoutine()

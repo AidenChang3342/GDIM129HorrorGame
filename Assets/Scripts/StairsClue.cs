@@ -8,9 +8,13 @@ public class StairsClue : MonoBehaviour
 
     private void Start()
     {
-        // play footsteps sfx after a delay
-        // add later: only play after certain clues are gathered
-        StartCoroutine(PlayFootsteps());
+        // play footsteps sfx after a delay if player has found bedroom and hallway clues
+        if(GameManager.instance.stairsClueFound == false && 
+        GameManager.instance.bedroomClueFound == true && 
+        GameManager.instance.hallwayClueFound == true)
+        {
+            StartCoroutine(PlayFootsteps());
+        }
     }
 
     // coroutine to play footstep sfx after a couple seconds delay

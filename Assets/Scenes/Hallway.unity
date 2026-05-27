@@ -243,6 +243,7 @@ MonoBehaviour:
   inventoryManagerPrefab: {fileID: 7866091027965120644, guid: 17039ceeb74c41b4aa993bd17ab430de, type: 3}
   dialogueManagerPrefab: {fileID: 5537948805190266027, guid: c093e834f1112994f8e78017c26aaa6b, type: 3}
   uiManagerPrefab: {fileID: 3748677363648057362, guid: 037e19e18e6815d4486f9e8d84e314d4, type: 3}
+  gameManagerPrefab: {fileID: 4849852608375279902, guid: 5ccb9655ec052b84db8ea711892d0b6d, type: 3}
 --- !u!4 &317849141
 Transform:
   m_ObjectHideFlags: 0

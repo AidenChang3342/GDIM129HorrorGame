@@ -12,8 +12,12 @@ public class KitchenClue : MonoBehaviour
     private Camera mainCamera;
     private void Start()
     {
+        // if clue has already been found, set gameobject to inactive
+        if(GameManager.instance.bedroomClueFound)
+        {
+            this.gameObject.SetActive(false);
+        }
         // set breath to inactive at start
-        // later: only set figure active once certain clues are gathered
         breathMark.SetActive(false);
         figure.SetActive(true);
         mainCamera = Camera.main;

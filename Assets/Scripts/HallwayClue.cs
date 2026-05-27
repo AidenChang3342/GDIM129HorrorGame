@@ -7,6 +7,14 @@ public class HallwayClue : MonoBehaviour
     [SerializeField] private AudioClip[] UISoundClip;
     [SerializeField] private ItemData clueItem;
     [SerializeField] private List<string> dialogueLines;
+    private void Start()
+    {
+        // if clue has already been found, set gameobject to inactive
+        if(GameManager.instance.hallwayClueFound)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 
     // on mouse click, play pickup sfx and show closeup of object
     private void OnMouseDown()
