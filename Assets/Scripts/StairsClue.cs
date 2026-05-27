@@ -1,19 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StairsClue : MonoBehaviour
 {
     [SerializeField] private AudioClip footstepSFX;
     [SerializeField] private float initialDelay;
+    [SerializeField] private float dialogueDelay;
+    [SerializeField] private List<string> dialogueLines;
 
     private void Start()
     {
         // play footsteps sfx after a delay if player has found bedroom and hallway clues
-        if(GameManager.instance.stairsClueFound == false && 
-        GameManager.instance.bedroomClueFound == true && 
+        if( GameManager.instance.bedroomClueFound == true && 
         GameManager.instance.hallwayClueFound == true)
         {
             StartCoroutine(PlayFootsteps());
+            
         }
     }
 
@@ -25,5 +28,12 @@ public class StairsClue : MonoBehaviour
 
         // play footstep sfx
         AudioManager.instance.PlaySFX(footstepSFX, this.transform, 1f);
+
+        // wait for dialogue delay
+        yield return new WaitForSeconds(dialogueDelay);
+
+        // show dialogue
+        DialogueManager.instance.StartDialogue(dialogueLines);
+        GameManager.instance.stairsClueFound = true;
     }
 }

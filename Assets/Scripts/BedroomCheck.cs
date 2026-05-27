@@ -10,9 +10,9 @@ public class BedroomCheck : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (UIManager.instance.inventoryUI.isOpen)
+        if (DialogueManager.instance.isDialogueActive)
         {
-            Debug.Log("Cannot interact while inventory is opened");
+            Debug.Log("Cannot change scene while dialogue is active");
             return;
         }
 

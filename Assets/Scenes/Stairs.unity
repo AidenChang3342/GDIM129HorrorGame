@@ -359,6 +359,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StairsClue
   footstepSFX: {fileID: 8300000, guid: 7b94939d3eacb8849b7dfa4c06bd54ab, type: 3}
   initialDelay: 3
+  dialogueDelay: 4
+  dialogueLines:
+  - What was that sound?
+  - "Maybe I\u2019ll hear it again if I retrace my steps."
 --- !u!4 &328314307
 Transform:
   m_ObjectHideFlags: 0

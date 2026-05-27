@@ -32,14 +32,16 @@ public class BedroomClue : MonoBehaviour
             Debug.Log("Cannot interact while inventory is opened");
             return;
         }
-
-        // if clue has not been found, play pickup sfx, show dialogue, add clue to inventory, and set clue as found in game manager so it doesn't respawn
-        if(GameManager.instance.bedroomClueFound == false)
+        if (DialogueManager.instance.isDialogueActive)
         {
-            Debug.Log("bedroom clue found");
-            StartCoroutine(PickupRoutine());
-            GameManager.instance.bedroomClueFound = true;
+            Debug.Log("Cannot interact while dialogue is active");
+            return;
         }
+
+        // start pickup routine and set clue as found in game manager
+        GameManager.instance.bedroomClueFound = true;
+        StartCoroutine(PickupRoutine());
+        
     }
 
     private IEnumerator PickupRoutine()

@@ -33,8 +33,8 @@ public class HallwayClue : MonoBehaviour
         // add clue to inventory
         InventoryManager.instance.AddItem(clueItem);
 
-        // deactivate object
-        // later: interact with game manager and save data of clue being picked up
+        // deactivate object and set clue as found in game manager so it doesn't respawn
+        GameManager.instance.hallwayClueFound = true;
         gameObject.SetActive(false);
     }
 }
