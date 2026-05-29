@@ -4003,7 +4003,7 @@ GameObject:
   - component: {fileID: 1589802383}
   - component: {fileID: 1589802382}
   - component: {fileID: 1589802381}
-  - component: {fileID: 1589802380}
+  - component: {fileID: 1589802385}
   - component: {fileID: 1589802384}
   m_Layer: 0
   m_Name: DoorToStairs
@@ -4028,23 +4028,6 @@ Transform:
   - {fileID: 853756985}
   m_Father: {fileID: 1224481445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589802380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589802378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManageScene
-  sceneName: Stairs
-  UISoundClip:
-  - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
-  - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
-  - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
 --- !u!61 &1589802381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4185,6 +4168,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoverText
   hoverArrow: {fileID: 853756984}
+--- !u!114 &1589802385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589802378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6668cdf6db13c047884bf1050c2bbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+  sceneToLoad: Stairs
 --- !u!1 &1598251234
 GameObject:
   m_ObjectHideFlags: 0

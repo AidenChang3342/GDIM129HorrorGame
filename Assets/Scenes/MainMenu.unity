@@ -735,14 +735,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1466019685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
+  m_Script: {fileID: 11500000, guid: b6668cdf6db13c047884bf1050c2bbe1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Bedroom
-  UISoundClip:
-  - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
-  - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
-  - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+  sceneToLoad: Bedroom
 --- !u!1 &1518109528
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,8 +823,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1466019687}
-        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: Quit
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: OnMouseDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1039,8 +1035,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1466019687}
-        m_TargetAssemblyTypeName: ManageScene, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: OnMouseDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

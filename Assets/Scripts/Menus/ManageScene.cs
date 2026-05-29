@@ -4,18 +4,10 @@ using UnityEngine.SceneManagement;
 public class ManageScene : MonoBehaviour
 {
     // Name of scene to load into
-    [SerializeField] private string sceneName;
     [SerializeField] private AudioClip[] UISoundClip;
 
-    private void OnMouseDown()
-    {
-        Debug.Log("Clicked: " + gameObject.name);
-        LoadScene();
-    }
-
-
     // Loads the scene based on name set in editor
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
         if (DialogueManager.instance.isDialogueActive)
         {

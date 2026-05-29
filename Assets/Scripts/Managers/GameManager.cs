@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool anyClueFound = false;
     public bool allCluesFound = false;
     public bool shouldKeypadActivate = false;
+    [SerializeField] private ManageScene manageScene;
         
     private void Awake()
     {
@@ -24,6 +26,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        manageScene = this.GetComponent<ManageScene>();
     }
 
     public void ResetGame()
@@ -54,5 +60,13 @@ public class GameManager : MonoBehaviour
         {
             allCluesFound = false;
         }
+    }
+    public void ChangeScene(string sceneName)
+    {
+        manageScene.LoadScene(sceneName);
+    }
+    public void ExitGame()
+    {
+        manageScene.Quit();
     }
 }

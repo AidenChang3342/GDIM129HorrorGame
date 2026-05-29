@@ -645,7 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Hallway
   UISoundClip:
   - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
   - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
@@ -755,7 +754,7 @@ GameObject:
   - component: {fileID: 866886992}
   - component: {fileID: 866886996}
   - component: {fileID: 866886994}
-  - component: {fileID: 866886993}
+  - component: {fileID: 866886998}
   - component: {fileID: 866886997}
   m_Layer: 0
   m_Name: DoorToHallway
@@ -780,23 +779,6 @@ Transform:
   - {fileID: 1056767086}
   m_Father: {fileID: 263479830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &866886993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866886991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManageScene
-  sceneName: Hallway
-  UISoundClip:
-  - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
-  - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
-  - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
 --- !u!61 &866886994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -915,6 +897,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   hoverArrow: {fileID: 1056767085}
+--- !u!114 &866886998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866886991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6668cdf6db13c047884bf1050c2bbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+  sceneToLoad: Hallway
 --- !u!1 &1037428417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1148,7 @@ GameObject:
   - component: {fileID: 1426755187}
   - component: {fileID: 1426755186}
   - component: {fileID: 1426755185}
-  - component: {fileID: 1426755184}
+  - component: {fileID: 1426755189}
   - component: {fileID: 1426755188}
   m_Layer: 0
   m_Name: DoorToKitchen
@@ -1178,23 +1173,6 @@ Transform:
   - {fileID: 1818202714}
   m_Father: {fileID: 263479830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426755184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426755182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManageScene
-  sceneName: Kitchen
-  UISoundClip:
-  - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
-  - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
-  - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
 --- !u!61 &1426755185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1335,6 +1313,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoverText
   hoverArrow: {fileID: 1818202713}
+--- !u!114 &1426755189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426755182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6668cdf6db13c047884bf1050c2bbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeScene
+  sceneToLoad: Kitchen
 --- !u!1 &1483223070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ff99cf50438f340984ab1224f851ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Kitchen
   UISoundClip:
   - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
   - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}

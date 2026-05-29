@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class BedroomCheck : MonoBehaviour
 {
-    [SerializeField] private GameObject door;
     [SerializeField] private List<string> dialogueLines;
     [SerializeField] private AudioClip openSFX;
 
@@ -26,7 +24,7 @@ public class BedroomCheck : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(openSFX, this.transform, 0.5f);
 
-            SceneManager.LoadScene("Hallway");
+            GameManager.instance.ChangeScene("Hallway");
         }
     }
 }
