@@ -12,6 +12,16 @@ public class InspectionUI : MonoBehaviour
     {
         instance = this;
     }
+    private void OnEnable()
+    {
+        // subscribe to inventory events
+        GameEvents.OnItemAdded += ShowItem;
+    }
+    private void OnDisable()
+    {
+        // unsubscribe from inventory events
+        GameEvents.OnItemAdded -= ShowItem;
+    }
 
     public void ShowItem(ItemData item)
     {

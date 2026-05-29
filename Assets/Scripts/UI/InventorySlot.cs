@@ -19,6 +19,6 @@ public class InventorySlot : MonoBehaviour
     {
         InspectionUI.instance.ShowItem(item);
         UIManager.instance.inventoryUI.ToggleInventory();
-        GameEvents.InspectionItemClicked?.Invoke(item.itemDescription);   
+        DialogueManager.instance.StartDialogue(item.itemDescription); 
     }
 }

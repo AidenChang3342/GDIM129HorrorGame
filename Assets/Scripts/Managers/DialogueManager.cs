@@ -29,13 +29,11 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         // subscribe to events
-        GameEvents.InspectionItemClicked += StartDialogue;
         GameEvents.OnUIReady += CacheUI;
     }
     private void OnDisable()
     {
         // unsubscribe from  events
-        GameEvents.InspectionItemClicked -= StartDialogue;
         GameEvents.OnUIReady -= CacheUI;
     }
 

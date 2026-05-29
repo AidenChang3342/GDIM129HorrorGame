@@ -14,8 +14,6 @@ public class BedroomClue : MonoBehaviour
 
 
     // on mouse click, play pickup sfx and show dialogue, then add clue to inventory
-    // add later: add gamemanager to save picked up clues (this prevents key from returning when player leaves and comes back) 
-    // implement unlocking door
     private void Start()
     {
         // if clue has already been found, set gameobject to inactive
@@ -40,10 +38,11 @@ public class BedroomClue : MonoBehaviour
 
         // start pickup routine and set clue as found in game manager
         GameManager.instance.bedroomClueFound = true;
-        StartCoroutine(PickupRoutine());
+        //StartCoroutine(PickupRoutine());
+        PickupClue();
         
     }
-
+    /*
     private IEnumerator PickupRoutine()
     {
         AudioManager.instance.PlaySFX(pickupSFX, transform, 0.5f);
@@ -61,5 +60,21 @@ public class BedroomClue : MonoBehaviour
         key.SetActive(false);
 
         gameObject.SetActive(false);
+    }
+    */
+
+    private void PickupClue()
+    {
+        AudioManager.instance.PlaySFX(pickupSFX, transform, 0.5f);
+
+
+        DialogueManager.instance.StartDialogue(dialogueLines);
+        InventoryManager.instance.AddItem(clueItem);
+
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        gameObject.SetActive(false);
+        GameManager.instance.bedroomClueFound = true;
     }
 }
