@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public bool hallwayClueFound = false;
     public bool stairsClueFound = false;
     public bool kitchenClueFound = false;
+    public bool anyClueFound = false;
+    public bool allCluesFound = false;
+    public bool shouldKeypadActivate = false;
         
     private void Awake()
     {
@@ -29,7 +32,27 @@ public class GameManager : MonoBehaviour
         hallwayClueFound = false;
         stairsClueFound = false;
         kitchenClueFound = false;
+        anyClueFound = false;
+        allCluesFound = false;
+        shouldKeypadActivate = false;
     }
 
-    
+    public void CheckClues()
+    {
+        if(hallwayClueFound || stairsClueFound || kitchenClueFound)
+        {
+            anyClueFound = true;
+        } else
+        {
+            anyClueFound = false;
+        }
+        
+        if(hallwayClueFound && stairsClueFound && kitchenClueFound)
+        {
+            allCluesFound = true;
+        } else
+        {
+            allCluesFound = false;
+        }
+    }
 }

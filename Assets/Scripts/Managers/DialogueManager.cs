@@ -94,6 +94,10 @@ public class DialogueManager : MonoBehaviour
             {
                 InspectionUI.instance.CloseInspection();
             }
+            if(GameManager.instance.shouldKeypadActivate)
+            {
+                GameEvents.ActivateKeypad?.Invoke();
+            }
             HideDialogue();
         }
     }

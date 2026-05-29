@@ -34,6 +34,9 @@ public class StairsClue : MonoBehaviour
 
         // show dialogue
         DialogueManager.instance.StartDialogue(dialogueLines);
+
+        // set clue as found in game manager
         GameManager.instance.stairsClueFound = true;
+        GameManager.instance.CheckClues();
     }
 }

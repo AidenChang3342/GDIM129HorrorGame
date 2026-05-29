@@ -35,6 +35,7 @@ public class HallwayClue : MonoBehaviour
 
         // deactivate object and set clue as found in game manager so it doesn't respawn
         GameManager.instance.hallwayClueFound = true;
+        GameManager.instance.CheckClues();
         gameObject.SetActive(false);
     }
 }

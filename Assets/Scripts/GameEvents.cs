@@ -14,4 +14,6 @@ public static class GameEvents
     public static Action<List<string>> InspectionItemClicked;
     // event for caching dialogueUI for dialogue to prevent errors
     public static Action OnUIReady;
+    // event for activating keypad in kitchen
+    public static Action ActivateKeypad;
 }

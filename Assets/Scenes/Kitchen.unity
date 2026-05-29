@@ -3804,6 +3804,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 842f112a7e24f8843a1122c3dddf94e4, type: 3}
   - {fileID: 8300000, guid: efbe82eecf7358e4497df8d761380809, type: 3}
   - {fileID: 8300000, guid: 7b3b2879b2be5094186863f641f4799c, type: 3}
+  noCluesDialogue:
+  - ' I forgot that Dad locks the Samtung Smart Fridge at night, there must be a
+    way to get the code around here somewhere. '
+  someCluesDialogue:
+  - "I don\u2019t think I have all the numbers for this code just yet. "
+  allCluesDialogue:
+  - " I\u2019m pretty sure I have all the pieces for this puzzle."
+  - From what I remember, the order should be the order of rooms from when I started.
 --- !u!61 &1363544851
 BoxCollider2D:
   m_ObjectHideFlags: 0
