@@ -9,6 +9,9 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.ResetGame();
         Instantiate(introCutscenePrefab);
         GameManager.instance.ChangeScene(startScene);
+
+        // set gameobject to inactive so it cannot be clicked again while transition is happening
+        this.gameObject.SetActive(false);
     }
     public void ExitGame()
     {

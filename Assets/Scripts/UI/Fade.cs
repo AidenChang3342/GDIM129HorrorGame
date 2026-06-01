@@ -22,6 +22,7 @@ public class Fade : MonoBehaviour
     public IEnumerator PlayFade(string sceneName)
     {
         fadeTransition.SetTrigger("FadeStart");
+        GameManager.instance.manageScene.PlayUISound();
 
         yield return new WaitForSeconds(fadeWaitTime);
         

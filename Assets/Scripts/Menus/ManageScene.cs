@@ -20,8 +20,7 @@ public class ManageScene : MonoBehaviour
             Debug.Log("Cannot change scene while inventory is opened");
             return;
         }
-        // plays ui sfx
-        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
+        
         SceneManager.LoadScene(sceneName);
     }
 
@@ -38,5 +37,10 @@ public class ManageScene : MonoBehaviour
         Application.Quit();
 #endif
       
+    }
+    public void PlayUISound()
+    {
+        // plays ui sfx
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
     }
 }

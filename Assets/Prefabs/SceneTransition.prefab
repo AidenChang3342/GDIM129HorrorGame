@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fade
   fadeTransition: {fileID: 6495244115357110438}
-  fadeWaitTime: 0
+  fadeWaitTime: 1
 --- !u!1 &7579329267487738190
 GameObject:
   m_ObjectHideFlags: 0
