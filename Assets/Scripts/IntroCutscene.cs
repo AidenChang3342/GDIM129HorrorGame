@@ -28,6 +28,7 @@ public class IntroCutscene : MonoBehaviour
 
     private IEnumerator PlayIntroDialogue()
     {
+        GameManager.instance.cutsceneActive = true;
         // wait for a couple seconds before starting dialogue and sfx
         yield return new WaitForSeconds(startDelay);
 
@@ -47,6 +48,7 @@ public class IntroCutscene : MonoBehaviour
     private IEnumerator DestroyAfterCutscene()
     {
         yield return new WaitForSeconds(eyesDelay);
+        GameManager.instance.cutsceneActive = false;
         Destroy(this.gameObject);
     }
 }

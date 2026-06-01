@@ -32,5 +32,4 @@ public class UIManager : MonoBehaviour
         // call event to cache dialogueUI reference for dialogue manager
         GameEvents.OnUIReady?.Invoke();
     }
-
 }

@@ -461,6 +461,8 @@ MonoBehaviour:
   - "I\u2019m so hungry\u2026"
   - "I\u2019m pretty sure I left some snacks in the fridge. "
   - '"Tip: Click around the screen to interact with objects."  '
+  - '"Tip: Click on the bottom button to open your inventory and see what you have
+    picked up."  '
   grumbleDelay: 1.5
   eyesDelay: 2
   startDelay: 2

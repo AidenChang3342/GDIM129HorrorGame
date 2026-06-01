@@ -698,6 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466019686}
   - component: {fileID: 1466019688}
+  - component: {fileID: 1466019689}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -740,6 +741,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   startScene: Bedroom
   introCutscenePrefab: {fileID: 9105590683944606691, guid: 747ec88986af94246b7f2e200efe57ee, type: 3}
+  mainMenuCanvasGroup: {fileID: 1466019689}
+  playButton: {fileID: 2032853944}
+--- !u!225 &1466019689
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466019685}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1518109528
 GameObject:
   m_ObjectHideFlags: 0

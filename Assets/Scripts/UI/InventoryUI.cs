@@ -36,6 +36,11 @@ public class InventoryUI : MonoBehaviour
             // if dialogue is active, prevent player from opening inventory
             return;
         }
+        if (GameManager.instance.cutsceneActive)
+        {
+            // if cutscene is active, prevent player from opening inventory
+            return;
+        }
 
         // visually open inventory
         animator.SetBool("Open", isOpen);
