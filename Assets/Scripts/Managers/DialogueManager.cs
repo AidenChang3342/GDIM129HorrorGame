@@ -96,6 +96,11 @@ public class DialogueManager : MonoBehaviour
             {
                 GameEvents.ActivateKeypad?.Invoke();
             }
+            if(GameManager.instance.introDialoguePlayed == false)
+            {
+                GameManager.instance.introDialoguePlayed = true;
+                GameEvents.IntroDialogueEnded?.Invoke();
+            }
             HideDialogue();
         }
     }

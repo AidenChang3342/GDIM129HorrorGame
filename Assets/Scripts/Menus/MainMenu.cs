@@ -3,12 +3,12 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string startScene;
+    [SerializeField] private GameObject introCutscenePrefab;
     public void StartGame()
     {
         GameManager.instance.ResetGame();
+        Instantiate(introCutscenePrefab);
         GameManager.instance.ChangeScene(startScene);
-
-        // later: start intro sequence with dialogue, sfx, and tutorial (tutorial is just a tooltip)
     }
     public void ExitGame()
     {

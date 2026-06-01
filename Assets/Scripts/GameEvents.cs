@@ -10,4 +10,8 @@ public static class GameEvents
     public static Action OnUIReady;
     // event for activating keypad in kitchen
     public static Action ActivateKeypad;
+    // event for continuing intro cutscene after dialogue ends
+    public static Action IntroDialogueEnded;
+    // event for changing scenes
+    public static Action <string> OnChangeScene;
 }

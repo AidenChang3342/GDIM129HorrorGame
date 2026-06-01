@@ -1,17 +1,26 @@
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    // variables to track if clues have been found in each room
     public bool bedroomClueFound = false;
     public bool hallwayClueFound = false;
     public bool stairsClueFound = false;
     public bool kitchenClueFound = false;
+    
+    // variables to track if any or all clues have been found to trigger certain events
     public bool anyClueFound = false;
     public bool allCluesFound = false;
     public bool shouldKeypadActivate = false;
-    [SerializeField] private ManageScene manageScene;
+
+    // variables for intro sequence
+    public bool introDialoguePlayed = false;
+
+    // variables for managing scenes and transitions
+    [SerializeField] public ManageScene manageScene;
         
     private void Awake()
     {
@@ -41,6 +50,7 @@ public class GameManager : MonoBehaviour
         anyClueFound = false;
         allCluesFound = false;
         shouldKeypadActivate = false;
+        introDialoguePlayed = false;
     }
 
     public void CheckClues()
@@ -63,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string sceneName)
     {
-        manageScene.LoadScene(sceneName);
+        GameEvents.OnChangeScene?.Invoke(sceneName);
     }
     public void ExitGame()
     {

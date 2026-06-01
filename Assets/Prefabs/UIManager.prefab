@@ -698,6 +698,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 0}
   inventoryUI: {fileID: 0}
   inspectionUI: {fileID: 0}
+  fadeTransition: {fileID: 0}
 --- !u!114 &1278948766037048224
 MonoBehaviour:
   m_ObjectHideFlags: 0

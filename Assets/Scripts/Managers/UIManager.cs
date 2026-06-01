@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
     public DialogueUI dialogueUI;
     public InventoryUI inventoryUI;
     public InspectionUI inspectionUI;
+
+
     private void Awake()
     {
         // creating singleton to call from anywhere
@@ -30,4 +32,5 @@ public class UIManager : MonoBehaviour
         // call event to cache dialogueUI reference for dialogue manager
         GameEvents.OnUIReady?.Invoke();
     }
+
 }
