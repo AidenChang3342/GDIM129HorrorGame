@@ -9,8 +9,15 @@ public class Keypad : MonoBehaviour
     [SerializeField] private AudioClip[] buttonPressedSFX;
     // ui sfx
     [SerializeField] private AudioClip[] UISoundClip;
+    // wrong code sfx
+    [SerializeField] private AudioClip wrongcodeSFX;
+    [SerializeField] private AudioClip correctcodeSFX;
+
     // correct code string
     [SerializeField] private string answer;
+
+    [SerializeField] private GameObject snack;
+
 
     // hides keypad
     public void Exit()
@@ -46,10 +53,12 @@ public class Keypad : MonoBehaviour
 
         if (output.text == answer)
         {
-            Debug.Log("correct code");
+            AudioManager.instance.PlaySFX(correctcodeSFX, this.transform, 1f);
+            snack.SetActive(true);
         }
         else
         {
+             AudioManager.instance.PlaySFX(wrongcodeSFX, this.transform, 1f);
             output.text = "";
         }
     }

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool hallwayClueFound = false;
     public bool stairsClueFound = false;
     public bool kitchenClueFound = false;
+    public bool snackFound = false;
     
     // variables to track if any or all clues have been found to trigger certain events
     [Space]
