@@ -4,19 +4,12 @@ using UnityEngine.SceneManagement;
 public class ManageScene : MonoBehaviour
 {
     // Name of scene to load into
-    [SerializeField] private string sceneName;
     [SerializeField] private AudioClip[] UISoundClip;
 
-    private void OnMouseDown()
-    {
-        Debug.Log("Clicked: " + gameObject.name);
-        LoadScene();
-    }
-
-
     // Loads the scene based on name set in editor
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
+        // checks if dialogue is active or inventory is open before allowing scene change
         if (DialogueManager.instance.isDialogueActive)
         {
             Debug.Log("Cannot change scene while dialogue is active");
@@ -27,10 +20,7 @@ public class ManageScene : MonoBehaviour
             Debug.Log("Cannot change scene while inventory is opened");
             return;
         }
-        // plays ui sfx
-        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
-
-        Debug.Log("Load Scene: " + sceneName);
+        
         SceneManager.LoadScene(sceneName);
     }
 
@@ -47,5 +37,10 @@ public class ManageScene : MonoBehaviour
         Application.Quit();
 #endif
       
+    }
+    public void PlayUISound()
+    {
+        // plays ui sfx
+        AudioManager.instance.PlayRandomSFX(UISoundClip, this.transform, 0.5f);
     }
 }

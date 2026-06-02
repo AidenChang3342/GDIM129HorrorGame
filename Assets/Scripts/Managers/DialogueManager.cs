@@ -29,13 +29,11 @@ public class DialogueManager : MonoBehaviour
     private void OnEnable()
     {
         // subscribe to events
-        GameEvents.InspectionItemClicked += StartDialogue;
         GameEvents.OnUIReady += CacheUI;
     }
     private void OnDisable()
     {
         // unsubscribe from  events
-        GameEvents.InspectionItemClicked -= StartDialogue;
         GameEvents.OnUIReady -= CacheUI;
     }
 
@@ -93,6 +91,15 @@ public class DialogueManager : MonoBehaviour
             if(InspectionUI.instance.inspection.activeSelf)
             {
                 InspectionUI.instance.CloseInspection();
+            }
+            if(GameManager.instance.shouldKeypadActivate)
+            {
+                GameEvents.ActivateKeypad?.Invoke();
+            }
+            if(GameManager.instance.introDialoguePlayed == false)
+            {
+                GameManager.instance.introDialoguePlayed = true;
+                GameEvents.IntroDialogueEnded?.Invoke();
             }
             HideDialogue();
         }

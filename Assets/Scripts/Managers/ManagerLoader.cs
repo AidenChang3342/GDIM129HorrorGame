@@ -6,6 +6,7 @@ public class ManagerLoader : MonoBehaviour
     [SerializeField] private GameObject inventoryManagerPrefab;
     [SerializeField] private GameObject dialogueManagerPrefab;
     [SerializeField] private GameObject uiManagerPrefab;
+    [SerializeField] private GameObject gameManagerPrefab;
     
     private void Awake()
     {
@@ -31,6 +32,11 @@ public class ManagerLoader : MonoBehaviour
         if (UIManager.instance == null)
         {
             Instantiate(uiManagerPrefab);
+        }
+        // check if game manager already exists before instantiating
+        if (GameManager.instance == null)
+        {
+            Instantiate(gameManagerPrefab);
         }
     }
 }

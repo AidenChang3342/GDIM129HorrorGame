@@ -10,17 +10,15 @@ public class InventorySlot : MonoBehaviour
     public void Setup(ItemData newItem)
     {
         item = newItem;
-        // this is only temporary, replace color with actual sprite
-        // itemImage.sprite = item.itemSprite
-        // once this is done, remember to change the itemData to include the sprite
-        itemImage.color = item.itemColor;
+        itemImage.sprite = item.itemSprite;
+        itemImage.preserveAspect = true;
+        itemImage.enabled = item.itemSprite != null;
     }
 
     public void OnClick()
     {
         InspectionUI.instance.ShowItem(item);
-        GameEvents.InspectionItemClicked?.Invoke(item.itemDescription);
-
         UIManager.instance.inventoryUI.ToggleInventory();
+        DialogueManager.instance.StartDialogue(item.itemDescription); 
     }
 }

@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Key
   itemColor: {r: 1, g: 0.8700229, b: 0, a: 1}
+  itemSprite: {fileID: 21300000, guid: 75fd27f04d92a974c847669a90bb69f9, type: 3}
+  inspectionSprite: {fileID: 21300000, guid: 5cf1f0a123dedf5408c16293a356601d, type: 3}
   itemDescription:
   - It's a key. I think it fits in my door. It appears to have the number 7 on it.

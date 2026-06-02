@@ -12,8 +12,12 @@ public class KitchenClue : MonoBehaviour
     private Camera mainCamera;
     private void Start()
     {
+        // if clue has already been found, set gameobject to inactive
+        if(GameManager.instance.kitchenClueFound)
+        {
+            this.gameObject.SetActive(false);
+        }
         // set breath to inactive at start
-        // later: only set figure active once certain clues are gathered
         breathMark.SetActive(false);
         figure.SetActive(true);
         mainCamera = Camera.main;
@@ -46,7 +50,7 @@ public class KitchenClue : MonoBehaviour
         if(
         breathMark.activeSelf && 
         Input.GetMouseButtonDown(0) && 
-        (UIManager.instance.inventoryUI.isOpen == false) )
+        UIManager.instance.inventoryUI.isOpen == false)
         {
             // cast a ray from mouse position
             Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -62,6 +66,10 @@ public class KitchenClue : MonoBehaviour
 
                 // add to inventory
                 InventoryManager.instance.AddItem(clueItem);
+
+                // set clue as found in game manager
+                GameManager.instance.kitchenClueFound = true;
+                GameManager.instance.CheckClues();
 
                 // hide breath mark
                 breathMark.SetActive(false);

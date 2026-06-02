@@ -30,26 +30,22 @@ public class InventoryUI : MonoBehaviour
         // need to add: gamemanager (hunger bar), bool variable to check if can open inventory
         // this is relevant in the kitchen when the keypad is open
         // if can't open inventory return;
+        isOpen = !isOpen;
         if (DialogueManager.instance.isDialogueActive)
         {
             // if dialogue is active, prevent player from opening inventory
             return;
         }
-        isOpen = !isOpen;
+        if (GameManager.instance.cutsceneActive)
+        {
+            // if cutscene is active, prevent player from opening inventory
+            return;
+        }
+
+        // visually open inventory
         animator.SetBool("Open", isOpen);
         
         AudioManager.instance.PlayRandomSFX(uiSFX, this.transform, 0.5f);
-
-        // call events for opening and closing inventory
-        // later: add game events inclusion to other objects to pause actions when inventory open
-        if (isOpen)
-        {
-            GameEvents.OnInventoryOpened?.Invoke();
-        }
-        else
-        {
-            GameEvents.OnInventoryClosed?.Invoke();
-        }
     }
 
     private void UpdateUI(ItemData item)

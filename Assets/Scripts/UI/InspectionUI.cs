@@ -12,15 +12,25 @@ public class InspectionUI : MonoBehaviour
     {
         instance = this;
     }
+    private void OnEnable()
+    {
+        // subscribe to inventory events
+        GameEvents.OnItemAdded += ShowItem;
+    }
+    private void OnDisable()
+    {
+        // unsubscribe from inventory events
+        GameEvents.OnItemAdded -= ShowItem;
+    }
 
     public void ShowItem(ItemData item)
     {
         inspection.SetActive(true);
 
-        // this is only temporary, replace color with actual sprite
-        // inspectImage.sprite = item.itemSprite
-        // once this is done, remember to change the itemData to include the sprite
-        inspectImage.color = item.itemColor;
+        inspectImage.sprite = item.inspectionSprite;
+        inspectImage.preserveAspect = true;
+        inspectImage.SetNativeSize(); // important
+
     }
 
     public void CloseInspection()

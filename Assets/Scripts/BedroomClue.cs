@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class BedroomClue : MonoBehaviour
@@ -7,10 +8,21 @@ public class BedroomClue : MonoBehaviour
     [SerializeField] private AudioClip[] UISoundClip;
     [SerializeField] private ItemData clueItem;
     [SerializeField] private List<string> dialogueLines;
+    [Header("Key")]
+    [SerializeField] private GameObject key;
+    [SerializeField] private float keyShowTime = 3f;
+
 
     // on mouse click, play pickup sfx and show dialogue, then add clue to inventory
-    // add later: add gamemanager to save picked up clues (this prevents key from returning when player leaves and comes back) 
-    // implement unlocking door
+    private void Start()
+    {
+        // if clue has already been found, set gameobject to inactive
+        if(GameManager.instance.bedroomClueFound)
+        {
+            this.gameObject.SetActive(false);
+        }
+        key.SetActive(false);
+    }
     private void OnMouseDown()
     {
         if (UIManager.instance.inventoryUI.isOpen)
@@ -18,17 +30,51 @@ public class BedroomClue : MonoBehaviour
             Debug.Log("Cannot interact while inventory is opened");
             return;
         }
+        if (DialogueManager.instance.isDialogueActive)
+        {
+            Debug.Log("Cannot interact while dialogue is active");
+            return;
+        }
 
-        AudioManager.instance.PlaySFX(pickupSFX, this.transform, 0.5f);
+        // start pickup routine and set clue as found in game manager
+        GameManager.instance.bedroomClueFound = true;
+        //StartCoroutine(PickupRoutine());
+        PickupClue();
         
-        // show dialogue
-        DialogueManager.instance.StartDialogue(dialogueLines);
+    }
+    /*
+    private IEnumerator PickupRoutine()
+    {
+        AudioManager.instance.PlaySFX(pickupSFX, transform, 0.5f);
 
-        // add clue to inventory
+        key.SetActive(true);
+
+        DialogueManager.instance.StartDialogue(dialogueLines);
         InventoryManager.instance.AddItem(clueItem);
 
-        // remove object
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(keyShowTime);
+
+        key.SetActive(false);
+
         gameObject.SetActive(false);
     }
+    */
 
+    private void PickupClue()
+    {
+        AudioManager.instance.PlaySFX(pickupSFX, transform, 0.5f);
+
+
+        DialogueManager.instance.StartDialogue(dialogueLines);
+        InventoryManager.instance.AddItem(clueItem);
+
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        gameObject.SetActive(false);
+        GameManager.instance.bedroomClueFound = true;
+    }
 }
