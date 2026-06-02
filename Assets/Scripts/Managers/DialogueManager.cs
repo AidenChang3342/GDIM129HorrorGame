@@ -105,6 +105,11 @@ public class DialogueManager : MonoBehaviour
             {
                 GameManager.instance.StartEndingCutscene();
             }
+            if(GameManager.instance.endingDialoguePlayed == false)
+            {
+                GameManager.instance.endingDialoguePlayed = true;
+                GameEvents.EndingDialogueEnded?.Invoke();
+            }
             HideDialogue();
         }
     }

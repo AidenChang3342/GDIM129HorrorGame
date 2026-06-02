@@ -63,4 +63,12 @@ public class InventoryUI : MonoBehaviour
             slot.Setup(inventoryItem);
         }
     }
+
+    public void ClearInventoryUI()
+    {
+        foreach (Transform child in itemParent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

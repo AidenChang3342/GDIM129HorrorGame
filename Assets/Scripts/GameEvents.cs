@@ -12,6 +12,8 @@ public static class GameEvents
     public static Action ActivateKeypad;
     // event for continuing intro cutscene after dialogue ends
     public static Action IntroDialogueEnded;
+    // event for continuing ending cutscene after dialogue ends
+    public static Action EndingDialogueEnded;
     // event for changing scenes
     public static Action <string> OnChangeScene;
 }

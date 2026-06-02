@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     public bool allCluesFound = false;
     public bool shouldKeypadActivate = false;
     
-    // variables for intro sequence
+    // variables for cutscene sequences
     [Space]
-    [Header("Intro Sequence")]
+    [Header("Cutscenes")]
     public bool introDialoguePlayed = false;
-
+    public bool endingDialoguePlayed = false;
 
     // variables for managing scenes and transitions
     [Space]
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         snackFound = false;
         shouldKeypadActivate = false;
         introDialoguePlayed = false;
+        endingDialoguePlayed = false;
     }
 
     public void CheckClues()

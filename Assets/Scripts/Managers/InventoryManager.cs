@@ -35,4 +35,11 @@ public class InventoryManager : MonoBehaviour
             GameEvents.OnItemAdded?.Invoke(item);
         }
     }
+
+    // function to clear inventory
+    public void ClearInventory()
+    {
+        items.Clear();
+        UIManager.instance.inventoryUI.ClearInventoryUI();
+    }
 }
