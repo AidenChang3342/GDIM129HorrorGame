@@ -91,24 +91,40 @@ public class DialogueManager : MonoBehaviour
             if(InspectionUI.instance.inspection.activeSelf)
             {
                 InspectionUI.instance.CloseInspection();
+                UnityEngine.Debug.Log("Closing inspection UI...");
+                
             }
-            if(GameManager.instance.shouldKeypadActivate && GameManager.instance.snackFound == false)
+            if(GameManager.instance.shouldKeypadActivate && GameManager.instance.snackFound == false && UIManager.instance.inventoryUI.isOpen == false && GameManager.instance.cutsceneActive == false)
             {
+                UnityEngine.Debug.Log("Activating keypad...");
                 GameEvents.ActivateKeypad?.Invoke();
+                HideDialogue();
+                return;
             }
             if(GameManager.instance.introDialoguePlayed == false)
             {
+                UnityEngine.Debug.Log("Playing intro dialogue...");
                 GameManager.instance.introDialoguePlayed = true;
                 GameEvents.IntroDialogueEnded?.Invoke();
+                HideDialogue();
+                return;
             }
             if(GameManager.instance.snackFound)
             {
                 GameManager.instance.StartEndingCutscene();
+                HideDialogue();
+                return;
             }
             if(GameManager.instance.endingDialoguePlayed == false)
             {
                 GameManager.instance.endingDialoguePlayed = true;
                 GameEvents.EndingDialogueEnded?.Invoke();
+                HideDialogue();
+                return;
+            }
+            else
+            {
+                HideDialogue();
             }
             HideDialogue();
         }

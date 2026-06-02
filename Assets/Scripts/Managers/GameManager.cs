@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void StartEndingCutscene()
     {
+        UnityEngine.Debug.Log("Starting ending cutscene...");
         ChangeScene("Ending");
     }
 }
