@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class UIManager : MonoBehaviour
     public DialogueUI dialogueUI;
     public InventoryUI inventoryUI;
     public InspectionUI inspectionUI;
+    public Slider hungrySlider;
 
 
     private void Awake()
