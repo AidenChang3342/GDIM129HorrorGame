@@ -49,10 +49,16 @@ MonoBehaviour:
   hallwayClueFound: 0
   stairsClueFound: 0
   kitchenClueFound: 0
+  snackFound: 0
   anyClueFound: 0
   allCluesFound: 0
   shouldKeypadActivate: 0
+  introDialoguePlayed: 0
+  endingDialoguePlayed: 0
   manageScene: {fileID: 6313151324192979279}
+  cutsceneActive: 0
+  gameOverSceneName: GameLose
+  gameOverActive: 0
 --- !u!114 &6313151324192979279
 MonoBehaviour:
   m_ObjectHideFlags: 0

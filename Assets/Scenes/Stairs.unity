@@ -578,6 +578,7 @@ MonoBehaviour:
   dialogueManagerPrefab: {fileID: 5537948805190266027, guid: c093e834f1112994f8e78017c26aaa6b, type: 3}
   uiManagerPrefab: {fileID: 3748677363648057362, guid: 037e19e18e6815d4486f9e8d84e314d4, type: 3}
   gameManagerPrefab: {fileID: 4849852608375279902, guid: 5ccb9655ec052b84db8ea711892d0b6d, type: 3}
+  hungerManagerPrefab: {fileID: 3921677246745007338, guid: 9865b4efd8d33d845be47af751aaa8fc, type: 3}
 --- !u!4 &702898921
 Transform:
   m_ObjectHideFlags: 0

@@ -2,8 +2,16 @@ using UnityEngine;
 
 public class ClickHandler : MonoBehaviour
 {
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        HungryBarManager.Instance.Decrease();
+        Debug.Log("Clicked hunger object");
+
+        if (HungryBarManager.instance == null)
+        {
+            Debug.LogError("HungryBarManager instance is null");
+            return;
+        }
+
+        HungryBarManager.instance.Decrease();
     }
 }

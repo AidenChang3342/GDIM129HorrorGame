@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     [Header("Scene Management")]
     public ManageScene manageScene;
     public bool cutsceneActive;
+
+    [Space]
+    [Header("Game Over")]
+    [SerializeField] private string gameOverSceneName = "GameOver";
+    public bool gameOverActive = false;
         
     private void Awake()
     {
@@ -63,6 +68,9 @@ public class GameManager : MonoBehaviour
         shouldKeypadActivate = false;
         introDialoguePlayed = false;
         endingDialoguePlayed = false;
+
+        gameOverActive = false;
+        cutsceneActive = false;
     }
 
     public void CheckClues()
@@ -102,5 +110,23 @@ public class GameManager : MonoBehaviour
     {
         UnityEngine.Debug.Log("Starting ending cutscene...");
         ChangeScene("Ending");
+    }
+    public void PlayerLose()
+    {
+        if (gameOverActive) return;
+
+        gameOverActive = true;
+        cutsceneActive = true;
+
+        UnityEngine.Debug.Log("Player lost. Loading game over scene...");
+        ChangeScene(gameOverSceneName);
+    }
+
+    public void RestartGame()
+    {
+        gameOverActive = false;
+        cutsceneActive = false;
+        ResetGame();
+        manageScene.LoadScene("Bedroom");
     }
 }

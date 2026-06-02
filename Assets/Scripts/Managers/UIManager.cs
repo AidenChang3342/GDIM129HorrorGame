@@ -7,8 +7,7 @@ public class UIManager : MonoBehaviour
     public DialogueUI dialogueUI;
     public InventoryUI inventoryUI;
     public InspectionUI inspectionUI;
-    public Slider hungrySlider;
-
+    public HungerUI hungerUI;
 
     private void Awake()
     {
@@ -28,6 +27,7 @@ public class UIManager : MonoBehaviour
         dialogueUI = GetComponentInChildren<DialogueUI>();
         inventoryUI = GetComponentInChildren<InventoryUI>();
         inspectionUI = GetComponentInChildren<InspectionUI>();
+        hungerUI = GetComponentInChildren<HungerUI>();
     }
     private void Start()
     {

@@ -7,6 +7,7 @@ public class ManagerLoader : MonoBehaviour
     [SerializeField] private GameObject dialogueManagerPrefab;
     [SerializeField] private GameObject uiManagerPrefab;
     [SerializeField] private GameObject gameManagerPrefab;
+    [SerializeField] private GameObject hungerManagerPrefab;
     
     private void Awake()
     {
@@ -37,6 +38,10 @@ public class ManagerLoader : MonoBehaviour
         if (GameManager.instance == null)
         {
             Instantiate(gameManagerPrefab);
+        }
+        if (HungryBarManager.instance == null)
+        {
+            Instantiate(hungerManagerPrefab);
         }
     }
 }

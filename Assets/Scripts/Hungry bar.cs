@@ -3,32 +3,30 @@ using UnityEngine.UI;
 
 public class HungryBarManager : MonoBehaviour
 {
-    public static HungryBarManager Instance { get; private set; }
+    public static HungryBarManager instance { get; private set; }
 
     [Header("Hungry Bar 设置")]
     public float maxHunger = 100f;
-    public float currentHunger;
-    public float decreasePerClick = 1f;
+    public float currentHunger {get; private set;}
+    public float decreasePerClick = 5f;
+    public float HungerPercent => currentHunger / maxHunger; // For slider value.
 
-    [Header("UI")]
-    public Slider hungrySlider;
 
     void Awake()
     {
         // 单例核心逻辑
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject); // 跨场景保留（如果需要）
     }
 
     void Start()
     {
         currentHunger = maxHunger;
-        UpdateUI();
     }
 
     public void Decrease()
@@ -38,19 +36,23 @@ public class HungryBarManager : MonoBehaviour
 
         if (currentHunger <= 0f)
         {
-            OnHungry();
+            GameManager.instance.PlayerLose();
         }
     }
 
-    void UpdateUI()
+    private void UpdateUI()
     {
-        if (hungrySlider != null)
-            hungrySlider.value = currentHunger / maxHunger;
+        if (UIManager.instance != null && UIManager.instance.hungerUI != null)
+        {
+            UIManager.instance.hungerUI.SetValue(HungerPercent);
+        }
     }
+
 
     void OnHungry()
     {
         Debug.Log("饿死了！触发游戏事件");
+        GameManager.instance.PlayerLose();
         // 这里触发恐怖事件、Game Over 等
     }
 }

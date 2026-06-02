@@ -16,4 +16,6 @@ public static class GameEvents
     public static Action EndingDialogueEnded;
     // event for changing scenes
     public static Action <string> OnChangeScene;
+    public static Action<float> OnHungerChanged;
+
 }
