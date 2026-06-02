@@ -13,6 +13,11 @@ public class BedroomCheck : MonoBehaviour
             Debug.Log("Cannot change scene while dialogue is active");
             return;
         }
+        if(GameManager.instance.cutsceneActive)
+        {
+            Debug.Log("Cannot change scene while cutscene is active");
+            return;
+        }
 
         // if player clicks on door without finding clue, show dialogue
         if(GameManager.instance.bedroomClueFound == false)

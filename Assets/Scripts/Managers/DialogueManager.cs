@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
             {
                 InspectionUI.instance.CloseInspection();
             }
-            if(GameManager.instance.shouldKeypadActivate)
+            if(GameManager.instance.shouldKeypadActivate && GameManager.instance.snackFound == false)
             {
                 GameEvents.ActivateKeypad?.Invoke();
             }
@@ -100,6 +100,10 @@ public class DialogueManager : MonoBehaviour
             {
                 GameManager.instance.introDialoguePlayed = true;
                 GameEvents.IntroDialogueEnded?.Invoke();
+            }
+            if(GameManager.instance.snackFound)
+            {
+                GameManager.instance.StartEndingCutscene();
             }
             HideDialogue();
         }

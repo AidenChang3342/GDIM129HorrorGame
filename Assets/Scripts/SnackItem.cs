@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-public class SnackItem : MonoBehaviour
+public class SnackItem : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private ItemData snackItem;
     [SerializeField] private List<string> dialogueLines;
+    [SerializeField]private Image snackItemImage;
 
     private void Start()
     {
@@ -15,8 +18,12 @@ public class SnackItem : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    private void OnEnable()
+    {
+        snackItemImage.enabled = true;
+    }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (UIManager.instance.inventoryUI.isOpen)
         {
@@ -42,6 +49,6 @@ public class SnackItem : MonoBehaviour
 
         GameManager.instance.snackFound = true;
 
-        gameObject.SetActive(false);
+        snackItemImage.enabled = false;
     }
 }

@@ -55,6 +55,7 @@ public class Keypad : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(correctcodeSFX, this.transform, 1f);
             snack.SetActive(true);
+            this.gameObject.SetActive(false);
         }
         else
         {

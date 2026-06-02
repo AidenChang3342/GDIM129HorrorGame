@@ -2473,6 +2473,7 @@ MonoBehaviour:
   snackItem: {fileID: 11400000, guid: 95f65992464a8fb4da568337c993ec92, type: 2}
   dialogueLines:
   - Yummers...
+  snackItemImage: {fileID: 900550845}
 --- !u!1 &963640908
 GameObject:
   m_ObjectHideFlags: 0

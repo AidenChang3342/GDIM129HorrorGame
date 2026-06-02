@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         kitchenClueFound = false;
         anyClueFound = false;
         allCluesFound = false;
+        snackFound = false;
         shouldKeypadActivate = false;
         introDialoguePlayed = false;
     }
@@ -94,5 +95,10 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         manageScene.Quit();
+    }
+
+    public void StartEndingCutscene()
+    {
+        ChangeScene("Ending");
     }
 }
