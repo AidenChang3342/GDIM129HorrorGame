@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         shouldKeypadActivate = false;
         introDialoguePlayed = false;
         endingDialoguePlayed = false;
+        
 
         gameOverActive = false;
         cutsceneActive = false;
@@ -127,6 +128,7 @@ public class GameManager : MonoBehaviour
         gameOverActive = false;
         cutsceneActive = false;
         ResetGame();
+        HungryBarManager.instance.RestartHunger();
         manageScene.LoadScene("Bedroom");
     }
 }

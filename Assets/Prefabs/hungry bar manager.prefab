@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c98f0df4c48b8347a0654dff13ca7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HungryBarManager
-  maxHunger: 100
+  maxHunger: 300
   decreasePerClick: 5
 --- !u!114 &2038990765011603461
 MonoBehaviour:

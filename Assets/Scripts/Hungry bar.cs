@@ -6,7 +6,7 @@ public class HungryBarManager : MonoBehaviour
     public static HungryBarManager instance { get; private set; }
 
     [Header("Hungry Bar 设置")]
-    public float maxHunger = 100f;
+    public float maxHunger = 300f;
     public float currentHunger {get; private set;}
     public float decreasePerClick = 5f;
     public float HungerPercent => currentHunger / maxHunger; // For slider value.
@@ -38,6 +38,10 @@ public class HungryBarManager : MonoBehaviour
         {
             GameManager.instance.PlayerLose();
         }
+    }
+    public void RestartHunger()
+    {
+        currentHunger = maxHunger;
     }
 
     private void UpdateUI()

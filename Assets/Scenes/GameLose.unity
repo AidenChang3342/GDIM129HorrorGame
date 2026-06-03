@@ -367,7 +367,7 @@ MonoBehaviour:
   dialogueManagerPrefab: {fileID: 5537948805190266027, guid: c093e834f1112994f8e78017c26aaa6b, type: 3}
   uiManagerPrefab: {fileID: 3748677363648057362, guid: 037e19e18e6815d4486f9e8d84e314d4, type: 3}
   gameManagerPrefab: {fileID: 4849852608375279902, guid: 5ccb9655ec052b84db8ea711892d0b6d, type: 3}
-  hungerManagerPrefab: {fileID: 0}
+  hungerManagerPrefab: {fileID: 3921677246745007338, guid: 9865b4efd8d33d845be47af751aaa8fc, type: 3}
 --- !u!4 &569981934
 Transform:
   m_ObjectHideFlags: 0
@@ -837,6 +837,7 @@ GameObject:
   - component: {fileID: 976702562}
   - component: {fileID: 976702561}
   - component: {fileID: 976702560}
+  - component: {fileID: 976702563}
   m_Layer: 0
   m_Name: Again
   m_TagString: Untagged
@@ -907,7 +908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 976702561}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 976702563}
+        m_TargetAssemblyTypeName: GameLose, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &976702561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +959,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976702558}
   m_CullTransparentMesh: 1
+--- !u!114 &976702563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976702558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7efd7e0d587c11499cbfad303aec9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameLose
 --- !u!1001 &1119779994
 PrefabInstance:
   m_ObjectHideFlags: 0
