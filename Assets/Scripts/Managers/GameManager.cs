@@ -68,10 +68,14 @@ public class GameManager : MonoBehaviour
         shouldKeypadActivate = false;
         introDialoguePlayed = false;
         endingDialoguePlayed = false;
-        
 
         gameOverActive = false;
         cutsceneActive = false;
+
+        if (HungryBarManager.instance != null)
+        {
+            HungryBarManager.instance.RestartHunger();
+        }
     }
 
     public void CheckClues()
@@ -125,10 +129,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        gameOverActive = false;
-        cutsceneActive = false;
         ResetGame();
-        HungryBarManager.instance.RestartHunger();
         manageScene.LoadScene("Bedroom");
     }
 }

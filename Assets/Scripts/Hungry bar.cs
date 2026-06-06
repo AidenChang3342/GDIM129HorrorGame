@@ -42,8 +42,8 @@ public class HungryBarManager : MonoBehaviour
     public void RestartHunger()
     {
         currentHunger = maxHunger;
+        UpdateUI();
     }
-
     private void UpdateUI()
     {
         if (UIManager.instance != null && UIManager.instance.hungerUI != null)
@@ -52,11 +52,4 @@ public class HungryBarManager : MonoBehaviour
         }
     }
 
-
-    void OnHungry()
-    {
-        Debug.Log("饿死了！触发游戏事件");
-        GameManager.instance.PlayerLose();
-        // 这里触发恐怖事件、Game Over 等
-    }
 }
